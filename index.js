@@ -34,28 +34,28 @@ var Check = new CronJob(config.cron,async function () {
 
         //structure for the embed
         var SendEmbed = {
-            "title": `🔴 ${StreamData.user_name} is now live`,
+            "title": `🔴 ${StreamData.user_name} isch etz live`,
             "description": StreamData.title,
             "url": `https://www.twitch.tv/${StreamData.user_login}`,
             "color": 6570404,
             "fields": [
                 {
-                    "name": "Playing:",
+                    "name": "Spielt:",
                     "value": StreamData.game_name,
                     "inline": true
                 },
                 {
-                    "name": "Viewers:",
+                    "name": "Zueschauer:",
                     "value": StreamData.viewer_count,
                     "inline": true
                 },
                 {
                     "name": "Twitch:",
-                    "value": `[Watch stream](https://www.twitch.tv/${StreamData.user_login})`
+                    "value": `[Zuschauen](https://www.twitch.tv/${StreamData.user_login})`
                 },
                 (chan.DiscordServer ? {
                     "name": "Discord Server:",
-                    "value": `[Join here](${chan.DiscordServer})`
+                    "value": `[Beitreten](${chan.DiscordServer})`
                 } : {
                     "name": "** **",
                     "value": "** **"
